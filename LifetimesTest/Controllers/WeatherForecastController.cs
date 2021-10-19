@@ -20,7 +20,8 @@ namespace LifetimesTest.Controllers
 		private readonly IIntermediateManager _intermediateManager;
 		private readonly IIdentificationManager _identificationManager;
 
-		public WeatherForecastController(IIntermediateManager intermediateManager, IIdentificationManager identificationManager, ILogger<WeatherForecastController> logger)
+		public WeatherForecastController(IIntermediateManager intermediateManager, IIdentificationManager identificationManager,
+			ILogger<WeatherForecastController> logger)
 		{
 			logger.LogInformation("Creating new WeatherForecastController");
 			_identificationManager = identificationManager;
@@ -33,7 +34,7 @@ namespace LifetimesTest.Controllers
 		{
 			_logger.LogInformation($"Controller Id is {_identificationManager.Id}");
 			_intermediateManager.DoSomething();
-			
+
 			var rng = new Random();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 				{

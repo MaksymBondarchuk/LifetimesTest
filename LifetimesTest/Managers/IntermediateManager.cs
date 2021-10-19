@@ -2,7 +2,7 @@
 
 namespace LifetimesTest.Managers
 {
-	public class IntermediateManager: IIntermediateManager
+	public class IntermediateManager : IIntermediateManager
 	{
 		private readonly IIdentificationManager _identificationManager;
 		private readonly ILogger<IntermediateManager> _logger;

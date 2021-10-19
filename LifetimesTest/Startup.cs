@@ -20,12 +20,12 @@ namespace LifetimesTest
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddTransient<IIdentificationManager, IdentificationManager>();
+			services.AddScoped<IIdentificationManager, IdentificationManager>();
 			services.AddSingleton<IIntermediateManager, IntermediateManager>();
 			// services.AddTransient<IIntermediateManager, IntermediateManager>();
 			// services.AddScoped<IIntermediateManager, IntermediateManager>();
 			// services.AddSingleton<IIntermediateManager, IntermediateManager>();
-			
+
 			services.AddControllers();
 			services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "LifetimesTest", Version = "v1" }); });
 		}
